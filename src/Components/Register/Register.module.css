@@ -1,0 +1,75 @@
+.parent {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url(../Picture/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.parent .container {
+  width: 75%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* border: 3px solid green; */
+  background-color: transparent;
+}
+.parent form {
+  width: 50%;
+  height: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  /* border: 3px solid brown; */
+  padding: 20px 0;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  /* backdrop-filter: blur(19px);
+  -webkit-backdrop-filter: blur(19px); */
+  border-radius: 10px;
+}
+.parent input {
+  width: 80%;
+  padding: 7px 20px;
+  text-align: center;
+  border-radius: 8px;
+  border-style: none;
+  /* background-color: transparent; */
+}
+.parent input:nth-child(6) {
+  width: auto;
+  background-color: transparent;
+}
+.parent .card {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  /* border: 3px solid gold; */
+}
+.parent h1 {
+  font-style: italic;
+}
+.card a {
+  text-decoration: none;
+  font-size: 19px;
+  color: #ffcda8;
+}
+.parent button {
+  padding: 12px 70px;
+  color: #fff;
+  background-color: #2b2bf8;
+  border: none;
+  border-radius: 8px;
+}

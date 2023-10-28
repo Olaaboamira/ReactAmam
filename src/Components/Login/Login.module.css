@@ -1,0 +1,68 @@
+.parent {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url(../Picture/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.parent .container {
+  width: 65%;
+  height: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: transparent;
+}
+.parent form {
+  width: 50%;
+  height: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px 0;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border-radius: 10px;
+}
+.parent input {
+  width: 80%;
+  height: 10%;
+  padding: 0 20px;
+  text-align: center;
+  border-radius: 8px;
+  border-style: none;
+}
+
+.parent .card {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 20px;
+}
+.card a {
+  text-decoration: none;
+  font-size: 15px;
+  transform: translateX(60%);
+  color: #c70039;
+}
+.parent button {
+  padding: 12px 70px;
+  color: #fff;
+  background-color: #2b2bf8;
+  border: none;
+  border-radius: 8px;
+}
+.parent h1{
+  font-style: italic;
+}
