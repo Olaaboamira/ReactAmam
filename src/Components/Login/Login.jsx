@@ -1,6 +1,7 @@
 import React from 'react'
 import Css from "./Login.module.css"
 import { Link } from 'react-router-dom'
+<meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
 export default function Login() {
   return (
     <div>

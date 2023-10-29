@@ -73,3 +73,35 @@
   border: none;
   border-radius: 8px;
 }
+
+@media only screen and (max-width: 700px) {
+  
+
+  .parent button {
+    padding: 12px 50px;
+    color:white;
+    background-color: #2b2bf8;
+    border: none;
+    border-radius: 8px;
+    
+  }
+  .parent input {
+    width: 55%;
+    height: 8%;
+    padding: 0 20px;
+    text-align: center;
+    border-radius: 8px;
+    border-style: none;
+  }
+  .parent input:nth-child(6) {
+    width: 70px;
+    background-color: transparent;
+  }
+  
+  .card a {
+    text-decoration: none;
+    font-size: 13px;
+    color: black;
+  }
+ 
+}

@@ -8,7 +8,7 @@ const Register = () => {
         <div className={Css.parent}>
           <div className={Css.container}>
             <form action=''>
-            <h1>Sgin up</h1>
+            <h1>Sign up</h1>
               <input type="text" placeholder='Enter Your full Name' />
               <input type="email" placeholder='Enter yourr Email' />
               <input type="password" placeholder='Your Passowerd !' />
@@ -16,7 +16,7 @@ const Register = () => {
               <input type="file" placeholder='Upload your Cv' />
               <div className={Css.card}>
                 <Link to="SginUp">Have an account?!</Link>
-                <button>Sgin up</button>
+                <button>Sign up</button>
               </div>
             </form>
           </div>
