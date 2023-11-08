@@ -5,11 +5,13 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-image: url(../Picture/bg.jpg);
+  background-image: url(../Picture/sea.jpg);
+  animation: parent 100s ease 0s 6 normal forwards;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
+
 .parent .container {
   width: 75%;
   height: 90%;
@@ -17,7 +19,6 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  /* border: 3px solid green; */
   background-color: transparent;
 }
 .parent form {
@@ -42,7 +43,6 @@
   text-align: center;
   border-radius: 8px;
   border-style: none;
-  /* background-color: transparent; */
 }
 .parent input:nth-child(6) {
   width: auto;
@@ -56,15 +56,14 @@
   justify-content: center;
   flex-direction: column;
   gap: 20px;
-  /* border: 3px solid gold; */
 }
 .parent h1 {
   font-style: italic;
 }
 .card a {
   text-decoration: none;
-  font-size: 19px;
-  color: #ffcda8;
+  font-size: 15px;
+  color: #080808;
 }
 .parent button {
   padding: 12px 70px;
@@ -72,18 +71,16 @@
   background-color: #2b2bf8;
   border: none;
   border-radius: 8px;
+  cursor: pointer;
 }
 
-@media only screen and (max-width: 700px) {
-  
-
+@media only screen and (max-width: 1200px) {
   .parent button {
     padding: 12px 50px;
-    color:white;
+    color: white;
     background-color: #2b2bf8;
     border: none;
     border-radius: 8px;
-    
   }
   .parent input {
     width: 55%;
@@ -97,11 +94,23 @@
     width: 70px;
     background-color: transparent;
   }
-  
+
   .card a {
     text-decoration: none;
     font-size: 13px;
     color: black;
   }
- 
+}
+@media only screen and (min-width: 1200px) and (max-width: 1800px) {
+  @keyframes parent {
+    0% {
+      background-position: center bottom;
+      background-size: 100%;
+    }
+
+    100% {
+      background-position: center bottom;
+      background-size: 150%;
+    }
+  }
 }

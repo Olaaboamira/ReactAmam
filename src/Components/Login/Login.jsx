@@ -1,23 +1,56 @@
-import React from 'react'
-import Css from "./Login.module.css"
-import { Link } from 'react-router-dom'
-<meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
-export default function Login() {
+import React, { useState } from "react";
+import Css from "./Login.module.css";
+import { Link } from "react-router-dom";
+import { app, auth } from "../fire/firebase";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+
+const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+ const navigate = useNavigate("");
+
+  const Login = (e) => {
+    e.preventDefault();
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+       navigate("weather");
+         console.log(userCredential)
+       
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <div>
-     <div className={Css.parent}>
-          <div className={Css.container}>
-            <form action=''>
+      <div className={Css.parent}>
+        <div className={Css.container}>
+          <form action="" onSubmit={Login}>
             <h1>Login In!</h1>
-              <input type="text" placeholder='Enter yourr Email' />
-              <input type="text" placeholder='Your Passowerd !' />
-              <div className={Css.card}>
-                <Link to="/">Forget your Passowerd?!</Link>
-                <button><Link to="weather">Login In</Link></button>
-              </div>
-            </form>
-          </div>
+            <input
+              type="text"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter yourr Email"
+            />
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="******"
+            />
+            <div className={Css.card}>
+              <Link to="/">Forget your Passowerd?!</Link>
+              {/* <Link to="weather"> */}
+                <button>Login</button>
+              {/* </Link> */}
+            </div>
+          </form>
         </div>
+      </div>
     </div>
-  )
-}
+  );
+};
+export default Login;

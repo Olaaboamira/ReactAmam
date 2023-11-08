@@ -1,12 +1,9 @@
 import axios from "axios";
- import "./Apis.css";
- import { useEffect, useState } from "react";
+import "./Apis.css";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-// import cloudIcon from "./Assets/clouds-outlined-weather-symbol_icon-icons.com_54695.png";
-// import humidityIcon from "./Assets/icons8-humidity-52.png";
-// import windIcon from "./Assets/icons8-air-52.png";
-// import rainIcon from "./Assets/icons8-rain-64.png";
-// import locationIcon from "./Assets/icons8-worldwide-location-32.png";
+import logoImg from "../Picture/logo.png";
+import buttonLogo from "../Picture/icons8-worldwide-location-32.png";
 
 function Apis() {
   const [date, setDate] = useState({
@@ -34,24 +31,10 @@ function Apis() {
       axios
         .get(apiUrl)
         .then((res) => {
-          let imagePath = "";
-          if (res.data.weather[0].main === "Clouds") {
-            imagePath =
-              "./Assets/clouds-outlined-weather-symbol_icon-icons.com_54695.png";
-          } else if (res.data.weather[0].main === "Rain") {
-            imagePath = "./Assets/rainy.png";
-          } else if (res.data.weather[0].main === "Drizzle") {
-            imagePath = "./Assets/drizzle.png";
-          } else if (res.data.weather[0].main === "Mist") {
-            imagePath = "./Assets/fog.png";
-          } else if (res.data.weather[0].main === "Sunny") {
-            imagePath = "./Assets/cloudy (1).png";
-          } else {
-            imagePath =
-              "./Assets/clouds-outlined-weather-symbol_icon-icons.com_54695.png";
-          }
-        //   console.log(res.data);
+          //   console.log(res.data);
 
+
+          // This allows the component to re-render with the updated weather information.
           setDate({
             ...date,
             celcius: res.data.main.temp,
@@ -60,8 +43,7 @@ function Apis() {
             name: res.data.name,
             humidity: res.data.main.humidity,
             speed: res.data.wind.speed,
-            pressure: res.data.main.pressure,
-            Image: imagePath,
+            pressure: res.data.main.pressure
           });
         })
         .catch((err) => console.log(err));
@@ -79,30 +61,38 @@ function Apis() {
 
   return (
     <div>
-        <div className="container-weather">
-    <div className="box-container">
-    <div className="navBar">
-        <div className="nav">
-          <div className="logo">weather</div>
-          <Link to="">Home</Link>
+      <div div className="container-weather">
+        {/* navbar to move to another page */}
+        <div className="container-nav">
+          <Link to="/">HOME</Link>
           <div className="login">
-            <Link to="">login</Link>
+            <Link to="/SginUp">LOGOUT</Link>
           </div>
-          <Link to="">Help</Link>
+          <Link to="/">HELP</Link>
         </div>
-      </div>
-      <div className="search">
-        <input
-          type="text"
-          placeholder="Enter city Name"
-          onChange={handleChange}
-        />
-        <button id="tion" onClick={handleClick}></button>
-      </div>
-      <div className="weather">
+        <div className="container-logo">
+          <img src={logoImg} alt="pp" />
+        </div>
+
+        {/* animated the search  */}
+        <div className="search">
+          <input required type="text" onChange={handleChange} />
+          <label>
+            <span style={{ transitionDelay: "250ms" }}>S</span>
+            <span style={{ transitionDelay: "200ms" }}>e</span>
+            <span style={{ transitionDelay: "150ms" }}>a</span>
+            <span style={{ transitionDelay: "100ms" }}>r</span>
+            <span style={{ transitionDelay: "50ms" }}>c</span>
+            <span style={{ transitionDelay: "0ms" }}>h</span>
+          </label>
+          {/* the handleClick function will be called when the image is clicked by the user. */}
+          <img src={buttonLogo} alt="" id="tion" onClick={handleClick}></img>
+        </div>
+
         <div className="winfo">
           <h1>{date.name}</h1>
           <img src={date.Image} alt="" />
+          {/* displays the minimum and current temperature in Celsius.  */}
           <div className="original">
             <h3>{Math.round(date.mainCelcius)}°C</h3>
             <h2>{Math.round(date.celcius)}°C</h2>
@@ -110,17 +100,15 @@ function Apis() {
           </div>
           <div className="details">
             <div className="humidity">
-              {/* <img src={humidityIcon} alt="Humidity Icon" /> */}
+              {/* function is used to round the temperature value to the nearest whole number */}
               <p>{Math.round(date.humidity)}%</p>
               <p>Humidity</p>
             </div>
             <div className="wind">
-              {/* <img src={windIcon} alt="Wind Icon" /> */}
               <p>{Math.round(date.speed)} mph</p>
               <p>Wind</p>
             </div>
             <div className="pressure">
-              {/* <img src={rainIcon} alt="Rain Icon" /> */}
               <p>{Math.round(date.pressure)} h</p>
               <p>pressure</p>
             </div>
@@ -128,11 +116,7 @@ function Apis() {
         </div>
       </div>
     </div>
-    </div>
-    </div>
   );
 }
 
 export default Apis;
-
-
